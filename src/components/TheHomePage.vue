@@ -2,9 +2,24 @@
 import { ref, reactive, computed } from 'vue'
 
 const allBooks = reactive([
-  { title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg', isFavourite: ref(false) },
-  { title: 'the way of kings', author: 'brandon sanderson', img: 'assets/2.jpg', isFavourite: ref(false) },
-  { title: 'the final empire', author: 'brandon sanderson', img: 'assets/3.jpg', isFavourite: ref(false) }
+  {
+    title: 'name of the wind',
+    author: 'patrick rothfuss',
+    img: 'assets/1.jpg',
+    isFavourite: ref(false)
+  },
+  {
+    title: 'the way of kings',
+    author: 'brandon sanderson',
+    img: 'assets/2.jpg',
+    isFavourite: ref(false)
+  },
+  {
+    title: 'the final empire',
+    author: 'brandon sanderson',
+    img: 'assets/3.jpg',
+    isFavourite: ref(false)
+  }
 ])
 
 const favBooks = computed(() => {
@@ -17,11 +32,11 @@ let isVisible = ref(true)
 let isActiveList = ref(true)
 
 function toggleVisibility() {
-  return isVisible.value = !isVisible.value
+  return (isVisible.value = !isVisible.value)
 }
 
 function toggleFavourites(book) {
-  return book.isFavourite = !book.isFavourite
+  return (book.isFavourite = !book.isFavourite)
 }
 
 function toggleActiveList(e) {
@@ -31,9 +46,8 @@ function toggleActiveList(e) {
     books = allBooks
   }
 
-  return isActiveList.value = !isActiveList.value
+  return (isActiveList.value = !isActiveList.value)
 }
-
 </script>
 
 <template>
@@ -49,8 +63,13 @@ function toggleActiveList(e) {
     </button>
   </div>
   <ul v-if="isVisible">
-    <li v-for="book in books" :key="book.title" :class="{ marked: book.isFavourite }" @click="toggleFavourites(book)">
-      <img :src="book.img" :alt="book.title">
+    <li
+      v-for="book in books"
+      :key="book.title"
+      :class="{ marked: book.isFavourite }"
+      @click="toggleFavourites(book)"
+    >
+      <img :src="book.img" :alt="book.title" />
       <h3>{{ book.title }}</h3>
       <p>{{ book.author }}</p>
     </li>
