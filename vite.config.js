@@ -13,7 +13,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  build: {
-    base: '/favourites-books-list/'
-  }
+  base: '/favourites-books-list/'
 })

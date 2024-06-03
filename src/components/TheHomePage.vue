@@ -5,19 +5,19 @@ const allBooks = reactive([
   {
     title: 'name of the wind',
     author: 'patrick rothfuss',
-    img: '/assets/1.jpg',
+    img: 'assets/1.jpg',
     isFavourite: ref(false)
   },
   {
     title: 'the way of kings',
     author: 'brandon sanderson',
-    img: '/assets/2.jpg',
+    img: 'assets/2.jpg',
     isFavourite: ref(false)
   },
   {
     title: 'the final empire',
     author: 'brandon sanderson',
-    img: '/assets/3.jpg',
+    img: 'assets/3.jpg',
     isFavourite: ref(false)
   }
 ])
